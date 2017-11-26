@@ -1,0 +1,162 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #c5d1db;
+  font-family: 'Akrobat','Helvetica', 'Tahoma';
+}
+
+.title {
+  text-align: center;
+  font-family: 'Helvetica';
+  text-transform: uppercase;
+  color: #222222;
+  font-size: 22px;
+}
+
+.doors {
+  display: flex;
+  justify-content: space-around;
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.door {
+  background-color: #1cb868;
+  width: 200px;
+  height: 300px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  transition: all .3s ease;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.door:hover {
+  cursor: pointer;
+}
+
+.door-text {
+  font-size: 20px;
+  display: none;
+}
+
+.selected {
+  box-shadow: 0px 2px 5px #3b393a;
+  transform: scale(1.05);
+}
+
+.open.goat {
+  background-image: url('./img/goat.png');
+  background-color: #bf1452;
+}
+
+.open.prize {
+  background-image: url('./img/cake.png');
+  background-color: #1cb868;
+}
+
+
+
+.menu,.regame {
+  width: 400px;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.regame {
+  justify-content: center;
+}
+
+.re {
+  background-color: #19a65e;
+}
+
+.re:hover {
+  background-color: #169353;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  width: 100px;
+  color: #fff;
+  font-size: 14px;
+  transition: all .3s ease;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn.change {
+  background-color: #19a65e;
+}
+
+.btn.change:hover {
+  background-color: #169353;
+}
+
+.btn.nope {
+  background-color: #ac124a;
+}
+
+.btn.nope:hover {
+  background-color: #991042;
+}
+
+.result {
+  text-align: center;
+  margin:0;
+  margin-top: 10px;
+}
+
+table {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 1px 1px 2px #222;
+  border-radius: 4px;
+}
+
+h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+@media screen and (max-width: 360px) {
+  table {
+    width: 250px;
+    font-size: 14px;
+  }
+  th, td {
+    width: 50px;
+  }
+
+  .doors {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .door {
+    width: 30%;
+    height: 150px;
+  }
+
+  .menu,.regame {
+    width: 90%;
+  }
+}
