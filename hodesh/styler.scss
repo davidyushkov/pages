@@ -1,0 +1,69 @@
+.row-input {
+  margin-top: 10px;
+}
+
+.tb > tr > td:first-child {
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 360px) {
+  .container {
+    width: 100%;
+  }
+}
+
+
+//
+// .container {
+//   width: 600px;
+//   margin: 0 auto;
+// }
+//
+// .row {
+//   width: 90%;
+//   margin: 0 auto;
+//   margin-top: 20px;
+// }
+//
+// .year-field {
+//   & > input {
+//     display: block;
+//     width: 100%;
+//   }
+// }
+//
+// .year-input {
+//   padding: 5px;
+//   font-size: 16px;
+//   border-radius: 3px;
+//   border: 1px solid red;
+//   &:focus,
+//   &:hover {
+//     outline: none;
+//   }
+// }
+//
+//
+// .table,.main-table,tr {
+//   width: 100%;
+//   margin: 0 auto;
+//   border: 1px solid red;
+// }
+//
+// tr > td {
+//   padding-left: 50px;
+// }
+
+// tr {
+//   width: 100%;
+//   display: flex;
+//   justify-content: space-around;
+// }
+//
+// th {
+//   font-size: 18px;
+// }
+//
+// tr > td {
+//   justify-self: start;
+// }

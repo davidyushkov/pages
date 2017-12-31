@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Molad</title>
+  <link rel="stylesheet" href="materialize/css/materialize.min.css">
+  <link rel="stylesheet" href="styler.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row row-input">
+      <div class="input-field col s8 offset-s2">
+        <input id='year' type="number" class='validate' value='5778'>
+        <label for="year">Year</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <table id='main-table' class="bordered striped highlight centered">
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Molad</th>
+            </tr>
+          </thead>
+          <tbody id="tbody" class='tb'></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+  <script src='materialize/js/materialize.min.js'></script>
+  <script src='bundle.js'></script>
+</body>
+</html>
