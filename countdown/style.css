@@ -167,6 +167,7 @@ li {
 @media only screen and (max-width: 450px) {
   .title {
     font-size: 25px;
+    margin-bottom: 10px;
   }
   .title-2 {
     font-size: 20px;
