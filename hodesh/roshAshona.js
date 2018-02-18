@@ -15,7 +15,7 @@ export function isHalfDay(moladHour) {
   return moladHour >= 18;
 }
 
-//if current year is ordinary and molad more then 3.9.204
+//if current year is ordinary and molad is or more then 3.9.204
 export function is39204(molad, year) {
   const isMeubar = isMeubarYear(year);
   const moladArr = fromStringToArr(molad);
@@ -28,7 +28,7 @@ export function is39204(molad, year) {
   return false;
 }
 
-//if previous year is meuberet and molad more then 2.15.589
+//if previous year is meuberet and molad is or more then 2.15.589
 export function is215589(molad, year) {
   const isMeubar = isMeubarYear(year - 1);
   const moladArr = fromStringToArr(molad);
@@ -41,35 +41,38 @@ export function is215589(molad, year) {
   return false;
 }
 
-//moladTishrey sholud be a result of defineMolad fn
-export function defineRoshAshona(moladTishrei, year) {
-  const currentYear = year - 1;
-  const moladTishreiArr = fromStringToArr(moladTishrei);
-  const isMeubar = isMeubarYear(currentYear);
+export function defineRoshAshona(year) {
+  const moladTishrei = defineMolad(year, 'tishrei');
+  const isSimpleYear = !isMeubarYear(year);
+  const isMeubarYearBefore = isMeubarYear(year - 1);
+  const [day, hour] = fromStringToArr(moladTishrei);
+  // console.log(moladTishrei, isSimpleYear, isMeubarYearBefore, day,  hour);
 
-  if(isMeubar && is215589(moladTishrei, currentYear)) {
-    console.log('here');
-    moladTishreiArr[0] = 3;
-    return fromArrToString(moladTishreiArr);
-  } else if(!isMeubar && is39204(moladTishrei, currentYear)) {
-    moladTishreiArr[0] = 5;
-    return fromArrToString(moladTishreiArr);
+  if(isMeubarYearBefore && is215589(moladTishrei,year)) {
+    return 3;
+  } else if(isSimpleYear && is39204(moladTishrei,year)) {
+    return 5;
   }
 
-  if(isAduDay(moladTishreiArr[0])) {
-    moladTishreiArr[0] += 1;
-  }
-  if(isHalfDay(moladTishreiArr[1])) {
-    moladTishreiArr[0] += 1;
-  }
-
-  if(isAduDay(moladTishreiArr[0] % 7)) {
-    moladTishreiArr[0] += 1;
+  let currentResult = day;
+  if(isHalfDay(hour) && isAduDay(day + 1)) {
+    currentResult = (day + 2)%7 === 0 ? 7 : (day + 2)%7;
+  } else if(isHalfDay(hour) && !isAduDay(day + 1)) {
+    currentResult = (day + 1)%7 === 0 ? 7 : (day + 1)%7;
   }
 
-  if(moladTishreiArr[0] > 7) {
-    moladTishreiArr[0] = moladTishreiArr[0] % 7;
+  if(currentResult === 0) {
+    ++currentResult;
   }
 
-  return fromArrToString(moladTishreiArr);
+  if(isAduDay(currentResult)) {
+    currentResult = currentResult + 1;
+  }
+
+  return currentResult;
 }
+
+// for(let i = 5700; i < 5800; i++) {
+//   console.log(i, defineRoshAshona(i));
+// }
+// console.log(defineRoshAshona(5781));

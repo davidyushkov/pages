@@ -1,11 +1,19 @@
 .row-input {
-  margin-top: 10px; }
+  margin-top: 10px;
+}
 
 .tb > tr > td:first-child {
-  text-transform: capitalize; }
+  text-transform: capitalize;
+}
+
+.title {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
 
 @media screen and (max-width: 360px) {
   .container {
-    width: 100%; } }
-
-/*# sourceMappingURL=styler.css.map */
+    width: 100%;
+  }
+}

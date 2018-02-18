@@ -33,3 +33,27 @@ export const adu = [1,4,6];
 
 export const exclude39204 = '3.9.204';
 export const exclude215489 = '2.15.589';
+
+//--hodoshim
+// 10--11
+// 15--17
+
+
+export const daysCountInMonths = {
+  tishrei: 30,
+  cheshvan:29,
+  kislev:30,
+  tevet:29,
+  shevat: 30,
+  adar: 29,
+  nisan:30,
+  iyar: 29,
+  sivan: 30,
+  tammuz:29,
+  av: 30,
+  elul: 29
+};
+
+//----- ui
+
+export const daysOfWeek = ['Sun','Mon','Tue','Wed','Thu','Fri','Shab'];
